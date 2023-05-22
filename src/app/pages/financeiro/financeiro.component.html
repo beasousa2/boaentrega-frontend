@@ -1,0 +1,51 @@
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <table class="w-full text-sm text-left text-green-500 dark:text-green-400">
+      <thead class="text-xs text-green-700 uppercase bg-green-50 dark:bg-green-700 dark:text-green-400">
+          <tr>
+              <th scope="col" class="px-6 py-3">
+                Index
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Id pedido
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Pagamento sequencial
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Tipo
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Parcelas
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Valor
+            </th>
+          </tr>
+      </thead>
+      <tbody  >
+        <tr class="bg-white border-b" *ngFor="let pagamento of pagamentosObj | keyvalue">
+          <th scope="row" class="px-6 py-4 font-medium text-green-900 whitespace-nowrap">
+            {{ pagamento.key }}
+          </th>
+          <td class="px-6 py-4">
+            {{ pagamento.value.order_id }}
+          </td>
+          <td class="px-6 py-4">
+            {{ pagamento.value.payment_sequential }}
+          </td>
+          <td class="px-6 py-4">
+            {{ pagamento.value.payment_type }}
+          </td>
+          <td class="px-6 py-4">
+            {{ pagamento.value.payment_installments }}
+          </td>
+          <td class="px-6 py-4">
+            R${{ pagamento.value.payment_value }}
+          </td>
+        </tr>
+      </tbody>
+  </table>
+</div>
+
+

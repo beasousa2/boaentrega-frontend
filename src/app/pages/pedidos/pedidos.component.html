@@ -1,0 +1,50 @@
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <table class="w-full text-sm text-left text-green-500 dark:text-green-400">
+      <thead class="text-xs text-green-700 uppercase bg-green-50 dark:bg-green-700 dark:text-green-400">
+          <tr>
+              <th scope="col" class="px-6 py-3">
+                Index
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Id pedido
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Id cliente
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  Status
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  Entrega prevista
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Entrega realizada
+            </th>
+          </tr>
+      </thead>
+      <tbody  >
+        <tr class="bg-white border-b" *ngFor="let pedido of pedidos | keyvalue">
+          <th scope="row" class="px-6 py-4 font-medium text-green-900 whitespace-nowrap">
+            {{ pedido.key }}
+          </th>
+          <td class="px-6 py-4">
+            {{ pedido.value.order_id }}
+          </td>
+          <td class="px-6 py-4">
+            {{ pedido.value.customer_id }}
+          </td>
+          <td class="px-6 py-4">
+            {{ pedido.value.order_status }}
+          </td>
+          <td class="px-6 py-4">
+            {{ pedido.value.order_estimated_delivery_date }}
+          </td>
+          <td class="px-6 py-4">
+            {{ pedido.value.order_delivered_customer_date }}
+          </td>
+        </tr>
+      </tbody>
+  </table>
+</div>
+
